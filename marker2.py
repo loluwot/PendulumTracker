@@ -33,8 +33,7 @@ def get_arguments():
 
     return args
 
-# filename = 'erfan_1.mov'
-# calibration_frame = 'erfan_1.jpg'
+
 args = get_arguments()
 filename = args['filename']
 calibration_frame = args['image']
@@ -42,10 +41,6 @@ print(filename, calibration_frame)
 vid = cv2.VideoCapture(filename)
 # rret, calibration = vid.read()
 
-
-#Jae
-# calibration_resize = imutils.resize(calibration, width=300)
-# cv2.imwrite('lab3.jpg', calibration_resize)
 
 def get_center(image, lower, upper, miny = False, minarea=False):
     image1 = cv2.GaussianBlur(image, (11, 11), 0)
@@ -91,21 +86,6 @@ def sign(i):
 #Constants
 fps = 30
 spf = 1/fps
-#Andy
-# sp_lower = (154, 144, 109)
-# sp_upper = (172, 255, 255)
-
-#Richard
-# sp_lower = (163, 75, 0)
-# sp_upper = (182, 255, 255)
-
-#Jae
-# sp_lower = (0, 196, 87)
-# sp_upper = (255, 255, 255)
-
-#Erfan
-# sp_lower = (0, 172, 104)
-# sp_upper = (9, 255, 255)
 
 
 print(args['stationary'])
@@ -113,21 +93,6 @@ print(args['stationary'])
 sp_lower = tuple(args['stationary'][:3])
 sp_upper = tuple(args['stationary'][3:])
 
-#Andy
-# mp_lower = (118, 45, 0)
-# mp_upper = (141, 255, 255)
-
-#Richard
-# mp_lower = (108, 68, 19)
-# mp_upper = (134, 255, 113)
-
-#Jae
-# mp_lower = (92, 19, 0)
-# mp_upper = (168, 255, 213)
-
-#Erfan
-# sp_lower = (57, 102, 5)
-# sp_upper = (151, 255, 255)
 
 
 
@@ -184,10 +149,6 @@ in_oscil = False
 
 
 #print(calibration.shape)
-
-# fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
-# writer = cv2.VideoWriter('LFG.avi', fourcc, 10, (450, 600), isColor=True)
-
 amplitude = init_amplitude
 #print(amplitude/2/math.pi*360)
 last_thetas = []
